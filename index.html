@@ -1,0 +1,59 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Document</title>
+     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+     <script src="component/message.js"></script>
+     <script src="component/second.js"></script>
+     <script src="component/methods.js"></script>
+     <script src="component/vmodel.js"></script>
+     <script src="component/vmodel2.js"></script>
+     <script src="component/emit.js"></script>
+     <script src="component/receive.js"></script>
+     <script src="component/parent.js"></script>
+     <script src="component/child.js"></script>
+
+ </head>
+ <body>
+     <div id="app">
+
+        <message></message>
+        <second></second>
+        <methods></methods>
+        <vmodel></vmodel>
+        <vmodel2></vmodel2>
+        <emit @showcar="hello"></emit>
+        <receive ></receive>
+        <parent ></parent>
+        <child ref='child' ></parent>
+     </div>
+     <script>
+      new Vue({
+          el:'#app',
+          data() {
+              return {
+                  appName:'miApp'
+              }
+          },
+
+          mounted() {
+              const ch = this.$refs.child.cmp;
+              alert(ch);
+              setTimeout(() => {
+                this.$refs.child.showcmp()
+              }, 2000);
+          },
+
+        methods: {
+        hello(x){
+            alert(x)
+        }
+    },
+      })
+     </script>
+     
+ </body>
+ </html>
