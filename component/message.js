@@ -18,6 +18,11 @@ Vue.component('message',{
 
       <p> {{ info }}
       </p>
+      <ul >
+        <li v-for="item in info.data.posts">
+          {{ item }}
+        </li>
+      </ul>
    
       
     </div>`,
