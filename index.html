@@ -7,55 +7,84 @@
      <title>Document</title>
      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
-     <script src="component/message.js"></script>
-     <script src="component/second.js"></script>
-     <script src="component/methods.js"></script>
-     <script src="component/vmodel.js"></script>
-     <script src="component/vmodel2.js"></script>
-     <script src="component/emit.js"></script>
-     <script src="component/receive.js"></script>
-     <script src="component/parent.js"></script>
-     <script src="component/child.js"></script>
+    
+     <script src="component/todo.js"></script>
 
  </head>
  <body>
-     <p>http://my-json-server.typicode.com/raveBolognesa/vueTest/db</p>
-     <div id="app">
 
-        <message></message>
-        <second></second>
-        <methods></methods>
-        <vmodel></vmodel>
-        <vmodel2></vmodel2>
-        <emit @showcar="hello"></emit>
-        <receive ></receive>
-        <parent ></parent>
-        <child ref='child' ></parent>
-     </div>
-     <script>
-      new Vue({
-          el:'#app',
-          data() {
-              return {
-                  appName:'miApp'
-              }
-          },
+        <div id="todo-list-example">
+                <form v-on:submit.prevent="addNewTodo">
+                  <label for="new-todo">Add a todo</label>
+                  <input
+                    v-model="newTodoText"
+                    id="new-todo"
+                    placeholder="E.g. Feed the cat"
+                  ><input
+                  v-model="newTodoMore"
+                  id="new-todo"
+                  placeholder="E.g. Feed the cat"
+                >
+                  <button>Add</button>
+                </form>
+                <ul>
+                  <li
+                    is="todo-item"
+                    v-for="(todo, index) in todos"
+                    v-bind:key="todo.id"
+                    v-bind:title="todo.title"
+                    v-bind:more="todo.more"
+                    v-on:remove="todos.splice(index, 1)"
+                  ></li>
+                </ul>
+              </div>
 
-          mounted() {
-              const ch = this.$refs.child.cmp;
-              alert(ch);
-              setTimeout(() => {
-                this.$refs.child.showcmp()
-              }, 2000);
-          },
 
-        methods: {
-        hello(x){
-            alert(x)
+
+    <script>
+        
+  new Vue({
+    el: '#todo-list-example',
+    data: {
+      newTodoText: '',
+      newTodoMore: '',
+      todos: [
+        {
+          id: 1,
+          title: 'Do the dishes',
+          more: 'this is more',
+        },
+        {
+          id: 2,
+          title: 'Take out the trash',
+          more: 'this is more',
+          more: 'hola'
+        },
+        {
+          id: 3,
+          title: 'Mow the lawn',
+          more: 'this is more',
+
+          more: 'hola'
         }
+      ],
+      nextTodoId: 4
     },
-      })
-     </script>
+    methods: {
+      addNewTodo: function () {
+        this.todos.push({
+          id: this.nextTodoId++,
+          title: this.newTodoText,
+          more: this.newTodoMore
+        })
+        this.newTodoMore= '',
+        this.newTodoText = ''
+      }
+    }
+  })
+  </script>
+   
+    
      
  </body>
  </html>

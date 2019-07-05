@@ -1,26 +1,47 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "hello"
-    },
-    {
-      "id": 2,
-      "title": "pep"
-    },
-    {
-      "id": 3,
-      "title": "alber"
-    },
-    {
-      "id": 4,
-      "title": "jaime"
-    },
-    {
-      "id": 5,
-      "title": "fer"
+  "user": {
+    "properties": {
+      "id": {
+        "type": "integer"
+      },
+      "name": {
+        "type": "string"
+      },
+      "email": {
+       "type": "string"
+      },
+      "birthDate": {
+        "type": "string",
+        "format": "LocalDateTime",
+        "description": "LocalDateTime type"
+       },
+      "address": {
+        "$ref": "#/definitions/address"
+      }
     }
-  ],
+    },
+    "address": {
+      "properties": {
+        "id": {
+         "type": "integer"
+        },
+        "street": {
+         "type": "string"
+        },
+        "state": {
+         "type": "string"
+        },
+        "city": {
+         "type": "string"
+        },
+        "country": {
+         "type": "string"
+        },
+        "zip": {
+         "type": "string"
+        }
+      }
+    },
   "profile": {
     "name": "typicode"
   }
