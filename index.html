@@ -25,6 +25,15 @@
                   id="new-todo"
                   placeholder="E.g. Feed the cat"
                 >
+                <input v-model="newname"id="name" placeholder="name">
+                <input v-model="newemail"id="email" placeholder="email">
+                <input v-model="newbirthDate"id="birthDate" placeholder="birthDate">
+                <input v-model="newaddress"id="address" placeholder="address">
+                <input v-model="newstreet"id="street" placeholder="street">
+                <input v-model="newstate"id="state" placeholder="state">
+                <input v-model="newcity"id="city" placeholder="city">
+                <input v-model="newcountry"id="country" placeholder="country">
+                <input v-model="newzip"id="zip" placeholder="zip">
                   <button>Add</button>
                 </form>
                 <ul>
@@ -34,6 +43,15 @@
                     v-bind:key="todo.id"
                     v-bind:title="todo.title"
                     v-bind:more="todo.more"
+                    v-bind:name="todo.name"
+                    v-bind:email="todo.email"
+                    v-bind:birthDate="todo.birthDate"
+                    v-bind:address="todo.address"
+                    v-bind:street="todo.street"
+                    v-bind:state="todo.state"
+                    v-bind:city="todo.city"
+                    v-bind:country="todo.country"
+                    v-bind:zip="todo.zip"
                     v-on:remove="todos.splice(index, 1)"
                   ></li>
                 </ul>
@@ -48,6 +66,15 @@
     data: {
       newTodoText: '',
       newTodoMore: '',
+      newname: "",
+      newemail: "",
+      newbirthDate: "",
+      newaddress: "",
+      newstreet: "",
+      newstate: "",
+      newcity: "",
+      newcountry: "",
+      newzip: "",
       todos: [
         {
           id: 1,
@@ -57,15 +84,13 @@
         {
           id: 2,
           title: 'Take out the trash',
-          more: 'this is more',
-          more: 'hola'
+          more: 'hola 2'
         },
         {
           id: 3,
           title: 'Mow the lawn',
-          more: 'this is more',
 
-          more: 'hola'
+          more: 'hola3'
         }
       ],
       nextTodoId: 4
@@ -75,10 +100,28 @@
         this.todos.push({
           id: this.nextTodoId++,
           title: this.newTodoText,
-          more: this.newTodoMore
+          more: this.newTodoMore,
+          name: this.newname,
+          email: this.newemail,
+          birthDate: this.newbirthDate,
+          address: this.newaddress,
+          street: this.newstreet,
+          state: this.newstate,
+          city: this.newcity,
+          country: this.newcountry,
+          zip: this.newzip,
         })
         this.newTodoMore= '',
-        this.newTodoText = ''
+        this.newTodoText = '',
+        this.newname = "",
+        this.newemail = "",
+        this.newbirthDate = "",
+        this.newaddress = "",
+        this.newstreet = "",
+        this.newstate = "",
+        this.newcity = "",
+        this.newcountry = "",
+        this.newzip = ""
       }
     }
   })

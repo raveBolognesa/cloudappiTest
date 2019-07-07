@@ -1,10 +1,19 @@
 Vue.component('todo-item', {
-    template: '\
+    template: `\
       <li>\
         {{ title }}\
-        {{more }}\
+        {{ more  }}\
+        {{ name }}
+        {{ email }}
+        {{ birthDate }}
+        {{ address }}
+        {{ street }}
+        {{ state }}
+        {{ city }}
+        {{ country }}
+        {{ zip }}
         <button v-on:click="$emit(\'remove\')">Remove</button>\
       </li>\
-    ',
-    props: ['title','more']
+    `,
+    props: ['title','more',"name", "email","birthDate",  "address",  "street",  "state",   "city",    "country",    "zip",]
   })
