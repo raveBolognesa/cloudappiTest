@@ -50,12 +50,12 @@
         "more": "this is more"
       },
       "02":{
-        "id": "2",
+        "id": 2,
         "title": "Take out the trash",
         "more": "hola 2"
       },
       "03":{
-          "id": "3",
+          "id": 3,
           "title": "Mow the lawn",
   
           "more": "hola3"
