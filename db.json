@@ -60,8 +60,7 @@
         "more": "hola3"
     }
   ],
-    "nextTodoId": 4
-},
+    "nextTodoId": 4,
 "profile": {
   "name": "typicode"
 }
