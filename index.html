@@ -93,7 +93,8 @@
           more: 'hola3'
         }
       ],
-      nextTodoId: 4
+      nextTodoId: 4,
+      output:""
     },
     mounted () {
         axios
@@ -117,8 +118,7 @@
           zip: this.newzip,
         });
 
-        let currentObj = this;
-        axios.post('http://my-json-server.typicode.com/raveBolognesa/vueTest/tall', {
+        axios.post('https://my-json-server.typicode.com/raveBolognesa/vueTest/tall', {
                     name: {
                       id: this.nextTodoId++,
           title: this.newTodoText,
@@ -135,10 +135,10 @@
                     }
                 })
                 .then(function (response) {
-                    currentObj.output = response.data;
+                    this.todos.push(response.data);
                 })
                 .catch(function (error) {
-                    currentObj.output = error;
+                    this.output = error;
                 });
         this.newTodoMore= '',
         this.newTodoText = '',
