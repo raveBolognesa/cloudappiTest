@@ -42,24 +42,6 @@
         }
       }
     },
-    "todos": [
-      {
-        "id": 1,
-        "title": "Do the dishes",
-        "more": "this is more"
-      },
-      {
-        "id": 2,
-        "title": "Take out the trash",
-        "more": "hola 2"
-      },
-      {
-          "id": 3,
-          "title": "Mow the lawn",
-  
-          "more": "hola3"
-      }
-    ],
   "profile": {
     "name": "typicode"
   }
