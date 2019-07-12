@@ -15,5 +15,5 @@ Vue.component('todo-item', {
         <button v-on:click="$emit(\'remove\')">Remove</button>\
       </li>\
     `,
-    props: ['title','more',"name", "email","birthDate",  "address",  "street",  "state",   "city",    "country",    "zip",]
+    props: ['title','more',"name", "email","birthdate",  "address",  "street",  "state",   "city",    "country",    "zip",]
   })
