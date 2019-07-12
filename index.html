@@ -113,7 +113,22 @@
         });
 
         let currentObj = this;
-        axios.post('https://my-json-server.typicode.com/raveBolognesa/vueTest/tall', this.todos)
+        axios.post('http://my-json-server.typicode.com/raveBolognesa/vueTest/tall', {
+                    name: {
+                      id: this.nextTodoId++,
+          title: this.newTodoText,
+          more: this.newTodoMore,
+          name: this.newname,
+          email: this.newemail,
+          birthDate: this.newbirthDate,
+          address: this.newaddress,
+          street: this.newstreet,
+          state: this.newstate,
+          city: this.newcity,
+          country: this.newcountry,
+          zip: this.newzip,
+                    }
+                })
                 .then(function (response) {
                     currentObj.output = response.data;
                 })
