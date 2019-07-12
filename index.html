@@ -27,7 +27,7 @@
                 >
                 <input v-model="newname"id="name" placeholder="name">
                 <input v-model="newemail"id="email" placeholder="email">
-                <input v-model="birthdate"id="birthDate" placeholder="birthDate">
+                <input v-model="birthdate"id="birthdate" placeholder="birthdate">
                 <input v-model="newaddress"id="address" placeholder="address">
                 <input v-model="newstreet"id="street" placeholder="street">
                 <input v-model="newstate"id="state" placeholder="state">
@@ -45,7 +45,7 @@
                     v-bind:more="todo.more"
                     v-bind:name="todo.name"
                     v-bind:email="todo.email"
-                    v-bind:birthDate="todo.birthDate"
+                    v-bind:birthdate="todo.birthdate"
                     v-bind:address="todo.address"
                     v-bind:street="todo.street"
                     v-bind:state="todo.state"
@@ -104,7 +104,7 @@
           more: this.newTodoMore,
           name: this.newname,
           email: this.newemail,
-          birthDate: this.birthdate,
+          birthdate: this.birthdate,
           address: this.newaddress,
           street: this.newstreet,
           state: this.newstate,
@@ -120,7 +120,7 @@
           more: this.newTodoMore,
           name: this.newname,
           email: this.newemail,
-          birthDate: this.birthdate,
+          birthdate: this.birthdate,
           address: this.newaddress,
           street: this.newstreet,
           state: this.newstate,

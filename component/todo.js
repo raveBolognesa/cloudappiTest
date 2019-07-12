@@ -5,7 +5,7 @@ Vue.component('todo-item', {
         {{ more  }}\
         {{ name }}
         {{ email }}
-        {{ birthDate }}
+        {{ birthdate }}
         {{ address }}
         {{ street }}
         {{ state }}
