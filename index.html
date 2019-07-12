@@ -95,6 +95,11 @@
       ],
       nextTodoId: 4
     },
+    mounted () {
+        axios
+          .get('https://my-json-server.typicode.com/raveBolognesa/vueTest/db')
+          .then(response => (this.todos = response.data.tall))
+      },
     methods: {
       addNewTodo: function () {
         this.todos.push({
