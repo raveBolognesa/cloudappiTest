@@ -45,7 +45,7 @@
   
     "tall": {
       "01":{
-        "id": "1",
+        "id": 1,
         "title": "Do the dishes",
         "more": "this is more"
       },
