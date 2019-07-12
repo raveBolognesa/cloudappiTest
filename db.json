@@ -42,7 +42,7 @@
         }
       }
     },
-    "todos": {
+    "todos": [
       {
         "id": 1,
         "title": "Do the dishes",
@@ -59,7 +59,7 @@
   
           "more": "hola3"
       }
-    },
+    ],
   "profile": {
     "name": "typicode"
   }
