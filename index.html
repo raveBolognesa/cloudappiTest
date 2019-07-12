@@ -113,10 +113,7 @@
         });
 
         let currentObj = this;
-        axios.post('http://my-json-server.typicode.com/raveBolognesa/vueTest/todos', {
-                    name: this.name,
-                    description: this.description
-                })
+        axios.post('http://my-json-server.typicode.com/raveBolognesa/vueTest/tall', this.todos)
                 .then(function (response) {
                     currentObj.output = response.data;
                 })
