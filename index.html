@@ -93,8 +93,7 @@
           more: 'hola3'
         }
       ],
-      nextTodoId: 4,
-      output:""
+      nextTodoId: 4
     },
     mounted () {
         axios
@@ -103,10 +102,8 @@
       },
     methods: {
       addNewTodo: function () {
-        this.nextTodoId=this.nextTodoId++;
-        let numero = this.nextTodoId;
-        this.todos.push(JSON.stringify({numero:{
-          id: numero,
+        this.todos.push({
+          id: this.nextTodoId++,
           title: this.newTodoText,
           more: this.newTodoMore,
           name: this.newname,
@@ -118,10 +115,12 @@
           city: this.newcity,
           country: this.newcountry,
           zip: this.newzip,
-        }}));
+        });
 
-        axios.post('https://my-json-server.typicode.com/raveBolognesa/vueTest/tall', JSON.stringify({numero:{
-          id: numero,
+        let currentObj = this;
+        axios.post('http://my-json-server.typicode.com/raveBolognesa/vueTest/tall', {
+                    name: {
+                      id: this.nextTodoId++,
           title: this.newTodoText,
           more: this.newTodoMore,
           name: this.newname,
@@ -133,12 +132,13 @@
           city: this.newcity,
           country: this.newcountry,
           zip: this.newzip,
-        }}))
+                    }
+                })
                 .then(function (response) {
-                    this.todos.push(response.data);
+                    currentObj.todos.push = response.data;
                 })
                 .catch(function (error) {
-                    this.output = error;
+                    currentObj.output = error;
                 });
         this.newTodoMore= '',
         this.newTodoText = '',
