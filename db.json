@@ -8,41 +8,61 @@
         "type": "string"
       },
       "email": {
-       "type": "string"
+        "type": "string"
       },
       "birthDate": {
         "type": "string",
         "format": "LocalDateTime",
         "description": "LocalDateTime type"
-       },
+      },
       "address": {
         "$ref": "#/definitions/address"
       }
     }
-    },
-    "address": {
-      "properties": {
-        "id": {
-         "type": "integer"
-        },
-        "street": {
-         "type": "string"
-        },
-        "state": {
-         "type": "string"
-        },
-        "city": {
-         "type": "string"
-        },
-        "country": {
-         "type": "string"
-        },
-        "zip": {
-         "type": "string"
-        }
+  },
+  "address": {
+    "properties": {
+      "id": {
+        "type": "integer"
+      },
+      "street": {
+        "type": "string"
+      },
+      "state": {
+        "type": "string"
+      },
+      "city": {
+        "type": "string"
+      },
+      "country": {
+        "type": "string"
+      },
+      "zip": {
+        "type": "string"
       }
+    }
+  },
+  "todos": [
+    {
+      "id": 1,
+      "title": "Do the dishes",
+      "more": "this is more"
     },
-  "profile": {
-    "name": "typicode"
-  }
+    {
+      "id": 2,
+      "title": "Take out the trash",
+      "more": "hola 2"
+    },
+    {
+        "id": 3,
+        "title": "Mow the lawn",
+
+        "more": "hola3"
+    }
+  ],
+    "nextTodoId": 4
+},
+"profile": {
+  "name": "typicode"
+}
 }
